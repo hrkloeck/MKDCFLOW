@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set data_file   = 'J0252-7104_band1_cald.ms'
+
+set cal_tabs    = "'/data/SC0_CALTAB_p'","'/data/SC1_CALTAB_p'","'/data/SC2_CALTAB_p'","'/data/SC3_CALTAB_ap'"
+set cal_interp  = "'linear'","'linear'","'linear'","'linear'"
+
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/2GC/APPLY_CALIB_SPLIT.py --MS_FILE=/data/${data_file} --CAL_TAB=${cal_tabs} --CAL_INTERPOL=${cal_interp} --DOAPPLY --NOFGINFO --WORK_DIR=/data/

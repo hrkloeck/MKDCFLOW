@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set data_file   = 'J0413-8000_band4_cald.ms'
+set source_name = 'J0413-8000'
+
+mkdir 15_2_SELF_CAL_${source_name}
+
+cd 15_2_SELF_CAL_${source_name}
+
+cp -fr ../${data_file} .
+
+git clone https://github.com/JonahDW/Image-processing.git
+
+git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
+
+git clone https://github.com/hrkloeck/2GC.git
+
+# need first edit the Self_calibration_2GC.py
+#
+# selfcal_niter        = [300000,300000,300000,300000]
+# selfcal_threshold    = 0.000001
+#
+#singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/2GC/Self_calibration_2GC.py /data/ ${data_file}

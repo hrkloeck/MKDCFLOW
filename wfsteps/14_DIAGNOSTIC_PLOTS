@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set data_file   = 'J0252-7104_band4_cald.ms'
+set source_name = 'J0252-7104'
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg shadems --xaxis UV --yaxis DATA:amp --corr XX,YY --iter-corr --dir "/data/" /data/${data_file}
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg shadems --xaxis UV --yaxis DATA:phase --corr XX,YY --iter-corr --dir "/data/" /data/${data_file}
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis DATA:phase --ared mean --dir "/data/" /data/${data_file}
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis DATA:phase --ared std --dir "/data/" /data/${data_file}
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis DATA:amp --ared mean --dir "/data/" /data/${data_file}
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis DATA:amp --ared std --dir "/data/" /data/${data_file}
+
+mv /homes/hrk/log-shadems.txt .
+
+

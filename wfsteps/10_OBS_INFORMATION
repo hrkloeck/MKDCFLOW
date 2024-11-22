@@ -1,0 +1,1 @@
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/GET_MS_INFO.py --MS_FILE=/data/1678636873_sdp_l0_GS.ms.hann.spw > 1678636873_sdp_l0_GS.ms.hann.spw_INFO

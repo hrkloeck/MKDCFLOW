@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set data_file   = 'J0252-7104_band4_cald.ms'
+set source_name = 'J0252-7104'
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/GET_MS_INFO.py --MS_FILE=/data/${data_file} > ${data_file}_INFO
+
+singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/DYNAMIC_SPECTRUM_PLOTTER.py --MS_FILE=/data/${data_file} --WORK_DIR=/data/ --DO_SAVE_AVERAGE_DATA=AVERAGE_DATA --DOBSLWATERFALLSPEC --DOPLOTAVGSPECTRUM --DOPLOTNOMASKING --DONOTICKS --DOPLTSTDDATA --PLOTFILEMARKER=PLT_ 
+
+#singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/DYNAMIC_SPECTRUM_PICKLE_PLTFLG.py --AVG_FILE=/data/PLT_${source_name}_AVERAGE_DATA_pickle.py --DOFLAGDATA --DOBSLWATERFALLSPEC --DO_SAVE_FLAG_MASK=FLAG_DATA --WORK_DIR=/data/ --PLOTFILEMARKER=DYNFLAG_ --DONOTICKS
+
+#singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/FLAG_IT.py --MS_FILE=/data/Deep2pcal.ms --WORK_DIR=/data/ --FGMASK_FILE=/data/DYNFLAG_${source_name}_FLAG_DATA_pickle.py
+
+#singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/DYNAMIC_SPECTRUM_PLOTTER.py --MS_FILE=/data/Deep2pcal.ms --WORK_DIR=/data/ --PLOTFILEMARKER=MSFGPLT_ --DOBSLWATERFALLSPEC --DO_SAVE_AVERAGE_DATA=FINAL_FLAG  --DOPLOTNOMASKING --DONOTICKS --DOPLTSTDDATA
