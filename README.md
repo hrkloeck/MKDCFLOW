@@ -10,4 +10,7 @@ Hi this is work in progress at the moment
 software that will be used in the future is 
 
 https://github.com/hrkloeck/2GC
+
 https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN
+
+https://github.com/JonahDW/Image-processing
