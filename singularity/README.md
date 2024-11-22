@@ -13,7 +13,7 @@ cd my_CAL_TEST
 - get the depository, either via git clone or download the source:
 
 ```
-git clone https://gitlab.mpcdf.mpg.de/meerkat/mmgps.git
+git clone https://github.com/hrkloeck/MKDCFLOW.git
 ```
 
 - generate the singularity image
