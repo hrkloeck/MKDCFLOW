@@ -26,6 +26,10 @@ cd MKDCFLOW/singularity
 singularity build --fakeroot MKDCFLOW.simg singularity.meerkat.recipe_082024
 ```
 
+```
+cd ../../
+
+```
 NEED TO DO 
 
 generate explanation oon the CASA setup wrst to the singularity thing define HOME !!!
