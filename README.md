@@ -15,7 +15,9 @@ If you just what to get the thing done you could just use [oxkat](https://github
 
  1) Setup your directory and build the singularity image [go here](https://github.com/hrkloeck/MKDCFLOW/tree/main/singularity)
 
+ 2) my need to to test the singularity stuff
 
+ 3) Lets go to the workflow (https://github.com/hrkloeck/MKDCFLOW/tree/main/wfsteps)
 
 
 
