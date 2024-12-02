@@ -33,6 +33,5 @@ cd ../../
 mkdir -p ${USER}/.casa/data
 
 ```
-NEED TO DO 
 
-generate explanation oon the CASA setup wrst to the singularity thing define HOME !!!
+Ok lets go and start.
