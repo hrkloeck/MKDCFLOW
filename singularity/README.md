@@ -30,7 +30,6 @@ The next steps are needed to setup a pseudo home directory for CASA, python, etc
 
 ```
 cd ../../
-whoami 
 mkdir -p ${USER}/.casa/data
 
 ```
