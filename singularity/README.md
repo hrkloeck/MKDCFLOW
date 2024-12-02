@@ -28,7 +28,7 @@ singularity build --fakeroot MKDCFLOW.simg singularity.meerkat.recipe_082024
 
 ```
 cd ../../
-
+mkdir -p hrk/.casa/data
 ```
 NEED TO DO 
 
