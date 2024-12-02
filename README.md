@@ -17,7 +17,7 @@ If you just what to get the thing done you could just use [oxkat](https://github
 
  2) my need to to test the singularity stuff
 
- 3) Lets go to the workflow (https://github.com/hrkloeck/MKDCFLOW/tree/main/wfsteps)
+ 3) Lets go to the [workflow](https://github.com/hrkloeck/MKDCFLOW/tree/main/wfsteps)
 
 
 
