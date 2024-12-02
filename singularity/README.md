@@ -34,4 +34,11 @@ mkdir -p ${USER}/.casa/data
 
 ```
 
+Get some additional packages outside the singularity container 
+```
+git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
+git clone https://github.com/hrkloeck/2GC.git
+git clone https://github.com/JonahDW/Image-processing.git
+```
+
 Ok lets go and start.
