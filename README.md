@@ -12,29 +12,27 @@ If you just what to get the thing done you could just use [oxkat](https://github
 
 ## Now lets get started
 
- 1) You ned to build the singularity image
+
+ 1) You need to build the singularity image [go here]
 
 
 
 
 
 
-Hi this is work in progress at the moment
-1) check if you want it
-2) check singularity at Stellenbosch  to build singularity images need fakeroot permission
-3) get the sequence into git (hrk) and receipt for the singularity image
-4) produce test MS data file (for test purposes)
-5) start playing around
 
 
 
 
+## Some of the things you are going to use here 
 
+CASA
+shadms
+pybdfs
+wsclean
 
-software that will be used in the future is 
+[2GC self-calibration and imaging](https://github.com/hrkloeck/2GC)
 
-https://github.com/hrkloeck/2GC
+[Astronomical toolbox](https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN)
 
-https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN
-
-https://github.com/JonahDW/Image-processing
+[Source finding](https://github.com/JonahDW/Image-processing)
