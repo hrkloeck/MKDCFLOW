@@ -13,7 +13,7 @@ If you just what to get the thing done you could just use [oxkat](https://github
 ## Now lets get started
 
 
- 1) You need to build the singularity image [go here]
+ 1) Setup your directory and build the singularity image [go here](https://github.com/hrkloeck/MKDCFLOW/tree/main/singularity)
 
 
 
