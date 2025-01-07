@@ -22,10 +22,6 @@ If you just what to get the thing done you could just use [oxkat](https://github
 
 
 
-
-
-
-
 ## Some of the things you are going to use here 
 
 CASA
@@ -38,3 +34,5 @@ wsclean
 [Astronomical toolbox](https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN)
 
 [Source finding](https://github.com/JonahDW/Image-processing)
+
+Have fun
