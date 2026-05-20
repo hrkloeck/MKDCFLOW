@@ -32,5 +32,5 @@ WORKDIR="/work/"
 # Execute shadems inside singularity
 singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" python3 -W ignore \
 	    ${WORKDIR}/daskmsASTROKIT/daskms_ASTROKIT/GET_MS_INFO.py --DATA_DIR=${DATADIR} --WORK_DIR=${WORKDIR} \
-	    --MS_FILE=${DATA_FILE}  > ${WORK_PATH}/${DATA_FILE}_INFO
+	    --MS_FILE=${DATA_FILE} --DO_MS_INFO_JSON=${DATA_FILE}.json
 
