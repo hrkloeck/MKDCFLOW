@@ -1,0 +1,12 @@
+universe        = vanilla
+executable      = 01_OBS_INFORMATION
+arguments       = $(DATA_FILE) $(CWD)
+log             = condor_logs/run_example_$(Cluster)_$(Process).log
+output          = condor_logs/run_example_$(Cluster)_$(Process).out
+error           = condor_logs/run_example_$(Cluster)_$(Process).err
+request_cpus    = 16
+request_memory  = 128GB
+request_disk    = 150GB
+getenv          = True
+
+queue 1

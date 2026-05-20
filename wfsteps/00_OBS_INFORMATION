@@ -1,4 +1,34 @@
+#!/bin/bash
 
-git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
+#set -euo pipefail  # safer bash: exit on error, unset vars are errors
 
-singularity exec --bind ${PWD}:/data /media/scratch/Container_Build/HRK_CASA_6.5_DASK_WSC3.3.1024.simg python3 /data/DASKMSWERKZEUGKASTEN/GET_MS_INFO.py --MS_FILE=/data/1678636873_sdp_l0.ms > 1678636873_sdp_l0.ms_INFO
+# Define MS dataset
+#
+DATA_FILE=$1
+
+# Define the path of the current working directory
+#
+WORK_PATH=${PWD}
+
+# Define Container to use
+#
+CONTAINER_NAME="MKPLUSATEDGAR.simg"
+
+# Define paths
+#
+DATA_PATH="/bEDD/MPLUS-DATA"
+CONT_PATH="/bEDD/MPLUS-CONTAINER"
+
+# Define singularity input
+#
+CONTAINER="${CONT_PATH}/${CONTAINER_NAME}"
+DATADIR="/data"
+WORKDIR="/work"
+
+# Define the place of the MS File
+#
+MS_FILE="${DATADIR}/${DATA_FILE}"
+
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} ${CONTAINER} python3 \
+	    ${WORKDIR}/daskmsASTROKIT/daskms_ASTROKIT/GET_MS_INFO.py --MS_FILE=${MS_FILE} > "${WORK_PATH}/${DATA_FILE}_INFO"
+
