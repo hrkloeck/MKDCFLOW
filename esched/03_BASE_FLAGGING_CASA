@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# HRK MPIfR 2026
+#
+# usage like: source 03_RUN_PYTHON_CASA MSFILENAME CURRENT_DIR
+#
+# IMPORTANT to note:
+#
+#         - in the working directory make a user directory
+#                   mkdir -p ${USER}/.casa/data
+#         - in running the singularity your need to bind homes to the current directiory  
+#                   --bind ${WORK_PATH}:/homes
+#
+
+set -euo pipefail  # safer bash: exit on error, unset vars are errors
+
+# Define MS dataset
+DATA_FILE=$1
+
+# Define the path of the current working directory
+WORK_PATH=$2
+
+# Define Container to use
+CONTAINER_NAME="MKPLUSATEDGAR.simg"
+
+# Define path
+#
+DATA_PATH="/bEDD/MPLUS-DATA/"
+CONT_PATH="/bEDD/MPLUS-CONTAINER/"
+
+# Define singularity input 
+#
+CONTAINER="${CONT_PATH}/${CONTAINER_NAME}"
+DATADIR="/data/"
+WORKDIR="/work/"
+
+
+# Execute shadems inside singularity
+#
+singularity exec --bind ${WORK_PATH}:/homes --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" python3 ${WORKDIR}03_BASE_FLAGGING.py ${DATA_FILE} ${DATADIR} ${WORKDIR}
