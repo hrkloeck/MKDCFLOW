@@ -22,12 +22,25 @@ casatasks.flagmanager(vis=ms_name, mode='save', versionname='raw')
 casatasks.flagdata(vis=ms_name, mode='summary')
 
 #
-# Preflag steps
+# Base Flagging Steps
 #
 
 # Flag autocorrelations
 #
 casatasks.flagdata(vis=ms_name, mode='manual', autocorr=True, flagbackup=False)
+
+# Flag for shadowing
+casatasks.flagdata(vis=ms_name, mode='shadow', flagbackup=False)
+
+# 3. Flag edge channels
+casatasks.flagdata(vis=ms_name, spw='0:0', flagbackup=False, mode='manual')
+
+# 4. Clip for zeros
+casatasks.flagdata(vis=ms_name, flagbackup=False, mode='clip', clipzeros=True)
+
+# 5. Flag based on upper limit
+casatasks.flagdata(vis=ms_name, mode='clip', clipminmax=[0.0,UPDLIMT])
+
 
 # Backup flag data
 #
