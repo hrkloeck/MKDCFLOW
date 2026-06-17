@@ -1,6 +1,6 @@
 universe        = vanilla
 executable      = 01_OBS_INFORMATION
-arguments       = $(DATA_FILE) $(DATA_PATH) $(CWD)
+arguments       = $(DATA_FILE) $(DATA_PATH) $(WORK_PATH)
 log             = condor_logs/run_example_$(Cluster)_$(Process).log
 output          = condor_logs/run_example_$(Cluster)_$(Process).out
 error           = condor_logs/run_example_$(Cluster)_$(Process).err
