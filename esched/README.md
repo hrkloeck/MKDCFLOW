@@ -26,12 +26,12 @@ condor_submit 01_OBS_INFORMATION.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/b
 
 Just does basic flagging
 ```
-condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms CWD=$PWD 
+condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD 
 ```
 
 Sequence of jobs to be done
 
 ```
-condor_submit 04_FLAGGING_HRK.sub DATA_FILE=1678454471_sdp_l0.ms CWD=$PWD FIELD_ID=0
+condor_submit 04_FLAGGING_HRK.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
 ```
 
