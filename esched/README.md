@@ -15,6 +15,10 @@ mkdir -p ${USER}/.casa/data
 ```
 
 ```
+chmod 755 01_OBS_INFORMATION
+```
+
+```
 condor_submit 01_OBS_INFORMATION.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD
 ```
 
