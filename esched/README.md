@@ -15,6 +15,10 @@ mkdir -p ${USER}/.casa/data
 ```
 
 ```
+ git clone https://github.com/hrkloeck/daskmsASTROKIT.git
+```
+
+```
 chmod 755 01_OBS_INFORMATION
 ```
 
