@@ -1,6 +1,6 @@
 universe        = vanilla
 executable      = 04_FLAGGING_HRK
-arguments       = $(DATA_FILE) $(CWD) $(FIELD_ID)
+arguments       = $(DATA_FILE) $(DATA_PATH) $(WORK_PATH) $(FIELD_ID)
 log             = condor_logs/run_example_$(Cluster)_$(Process).log
 output          = condor_logs/run_example_$(Cluster)_$(Process).out
 error           = condor_logs/run_example_$(Cluster)_$(Process).err

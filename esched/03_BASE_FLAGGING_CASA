@@ -18,15 +18,15 @@ set -euo pipefail  # safer bash: exit on error, unset vars are errors
 DATA_FILE=$1
 
 # Define the path of the current working directory
-WORK_PATH=$2
+WORK_PATH=$3
 
 # Define Container to use
 CONTAINER_NAME="MKPLUSATEDGAR.simg"
 
 # Define path
 #
-# DATA_PATH="/bEDD/MPLUS-DATA/"
-DATA_PATH="/bEDD/MPLUS-WORKONDATA/"
+#DATA_PATH="/bEDD/MPLUS-WORKONDATA/"
+DATA_PATH=$2
 CONT_PATH="/bEDD/MPLUS-CONTAINER/"
 
 # Define singularity input 
