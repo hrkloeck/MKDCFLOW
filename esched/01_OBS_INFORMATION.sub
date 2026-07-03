@@ -9,4 +9,6 @@ request_memory  = 128GB
 request_disk    = 150GB
 getenv          = True
 
+accounting_group = g_mplus
+
 queue 1
