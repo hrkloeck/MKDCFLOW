@@ -1,5 +1,5 @@
 universe        = vanilla
-executable      = 04_FLAGGING_HRK
+executable      = 04_AVERAGE_WATERFALL_SPECTRA
 arguments       = $(DATA_FILE) $(DATA_PATH) $(WORK_PATH) $(FIELD_ID)
 log             = condor_logs/run_example_$(Cluster)_$(Process).log
 output          = condor_logs/run_example_$(Cluster)_$(Process).out
