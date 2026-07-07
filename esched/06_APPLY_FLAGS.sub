@@ -1,0 +1,14 @@
+universe        = vanilla
+executable      = 06_APPLY_FLAGS
+arguments       = $(DATA_FILE) $(DATA_PATH) $(WORK_PATH) $(FG_FILE)
+log             = condor_logs/run_example_$(Cluster)_$(Process).log
+output          = condor_logs/run_example_$(Cluster)_$(Process).out
+error           = condor_logs/run_example_$(Cluster)_$(Process).err
+request_cpus    = 16
+request_memory  = 128GB
+request_disk    = 150GB
+getenv          = True
+
+accounting_group = g_mplus
+
+queue 1

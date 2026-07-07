@@ -7,6 +7,11 @@
 
 set -euo pipefail  # safer bash: exit on error, unset vars are errors
 
+# Define the column to be plotted
+#
+PLTDATA = "DATA"
+
+
 # Define MS dataset
 DATA_FILE=$1
 
@@ -32,4 +37,14 @@ WORKDIR="/work/"
 
 # Execute shadems inside singularity
 #
-singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --xaxis FREQ --yaxis DATA:amp --corr XX,YY --iter-corr --iter-field --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --xaxis FREQ --yaxis "${PLTDATA}":amp --corr XX,YY --iter-corr --iter-field --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"
+
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis "${PLTDATA}":amp --ared mean --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"
+
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis "${PLTDATA}":amp --ared std --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"
+
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --xaxis FREQ --yaxis "${PLTDATA}":phase --corr XX,YY --iter-corr --iter-field --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"
+
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis "${PLTDATA}":phase --ared mean --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"
+
+singularity exec --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" shadems --corr XX,YY --iter-corr  -x ANTENNA1 -y ANTENNA2 --cmap coolwarm --aaxis "${PLTDATA}":phase --ared std --dir "${WORKDIR}" "${DATADIR}${DATA_FILE}"

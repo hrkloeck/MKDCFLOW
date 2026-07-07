@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# HRK MPIfR 2026
+#
+# usage like: source 03_RUN_PYTHON_CASA MSFILENAME CURRENT_DIR
+#
+# IMPORTANT to note:
+#
+#         - in the working directory make a user directory
+#                   mkdir -p ${USER}/.casa/data
+#         - in running the singularity your need to bind homes to the current directiory  
+#                   --bind ${WORK_PATH}:/homes
+#
+
+set -euo pipefail  # safer bash: exit on error, unset vars are errors
+
+# Define MS dataset
+DATA_FILE=$1
+
+# Define the path of the current working directory
+WORK_PATH=$3
+
+# Define the path of the current working directory
+AVG_FILE=$4
+
+# Define Container to use
+CONTAINER_NAME="MKPLUSATEDGAR.simg"
+
+# Define path
+#
+#DATA_PATH="/bEDD/MPLUS-WORKONDATA/"
+DATA_PATH=$2
+CONT_PATH="/bEDD/MPLUS-CONTAINER/"
+
+# Define singularity input 
+#
+CONTAINER="${CONT_PATH}/${CONTAINER_NAME}"
+DATADIR="/data/"
+WORKDIR="/work/"
+
+
+# Execute shadems inside singularity
+#
+singularity exec --bind ${WORK_PATH}:/homes --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} --env PYTHONPATH=${WORKDIR}DASKMSWERKZEUGKASTEN:/opt/venviron/py_venv/lib/python3.12.4/site-packages "${CONTAINER}" python3 ${WORKDIR}DASKMSWERKZEUGKASTEN/DYNAMIC_SPECTRUM_PICKLE_PLTFLG.py --PLOTFILEMARKER=PREFG_ --DO_SAVE_FLAG_MASK=PRESPECFG_${AVG_FILE} --DOBSLWATERFALLSPEC --DOPLTSTDDATA --PRTINF --WORK_DIR=${WORKDIR} --AVG_FILE=${WORKDIR}/${AVG_FILE}
+
+
