@@ -1,6 +1,6 @@
 universe        = vanilla
 executable      = 05_GENERATE_WATERFALL_FLAGS
-arguments       = $(DATA_FILE) $(DATA_PATH) $(WORK_PATH) $(AVG_FILE)
+arguments       = $(WORK_PATH) $(AVG_FILE)
 log             = condor_logs/run_example_$(Cluster)_$(Process).log
 output          = condor_logs/run_example_$(Cluster)_$(Process).out
 error           = condor_logs/run_example_$(Cluster)_$(Process).err
