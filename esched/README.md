@@ -50,7 +50,9 @@ chmod 755 00_VIEW_PNG_IMAGES
 ```
 
 
-## Basic Flagging
+## Flagging
+
+### Basic Flagging
 
 Do some basic flagging (thresholding, on zeros, shadowing) using CASA
 
@@ -65,7 +67,7 @@ condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bED
 
 
 
-## Flagging on the waterfall spectrum
+### Flagging on the waterfall spectrum
 
 These steps are part of an additional aproach for flagging.
 
@@ -119,7 +121,7 @@ condor_submit 07_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DA
 ```
 
 
-## Additional flaging based on pre-calibrated (corrected) data
+### Additional flaging based on pre-calibrated (corrected) data
 
 ```
 chmod 755 08_PRE_CAL_ADVANCE_FG
