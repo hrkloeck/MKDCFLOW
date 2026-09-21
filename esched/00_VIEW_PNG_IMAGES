@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# HRK MPIfR 2026
+#
+# usage like: source 01_OBS_INFORMATION MSFILENAME CURRENT_DIR
+#
+
+set -euo pipefail  # safer bash: exit on error, unset vars are errors
+
+# Define MS dataset
+DATA_FILE=$2
+
+# Define the path of the current working directory
+WORK_PATH=$1
+
+# Define Container to use
+CONTAINER_NAME="MKPLUSATEDGAR.simg"
+
+# Define path
+#
+#DATA_PATH="/bEDD/MPLUS-WORKONDATA/"
+#DATA_PATH=$2
+CONT_PATH="/bEDD/MPLUS-CONTAINER/"
+
+# Define singularity input 
+#
+CONTAINER="${CONT_PATH}/${CONTAINER_NAME}"
+DATADIR="/data/"
+WORKDIR="/work/"
+
+
+# Execute shadems inside singularity
+singularity exec --bind ${WORK_PATH}:${WORKDIR} "${CONTAINER}" eog ${WORKDIR}/${DATA_FILE}
+
