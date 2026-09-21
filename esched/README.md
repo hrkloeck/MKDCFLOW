@@ -15,7 +15,7 @@ mkdir -p ${USER}/.casa/data
 ```
 
 
-## Obtain information of the observatio 
+## Obtain information of the observation
 
 ```
  git clone https://github.com/hrkloeck/daskmsASTROKIT.git
@@ -37,6 +37,16 @@ chmod 755 02_OBS_DIAGNOSTIC_PLOTS
 
 ```
 condor_submit 02_OBS_DIAGNOSTIC_PLOTS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD
+```
+
+## View diagnostic plots
+
+```
+chmod 755 00_VIEW_PNG_IMAGES
+```
+
+```
+./00_VIEW_PNG_IMAGES ${PWD} FILE_NAME.png
 ```
 
 
@@ -76,3 +86,5 @@ condor_submit 04_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DA
 ```
 
 2. 
+
+
