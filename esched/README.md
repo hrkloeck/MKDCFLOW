@@ -50,9 +50,9 @@ chmod 755 00_VIEW_PNG_IMAGES
 ```
 
 
-## Flagging
+## Basic Flagging
 
-Do some basic flagging using CASA
+Do some basic flagging (thresholding, on zeros, shadowing) using CASA
 
 ```
 chmod 755 03_BASE_FLAGGING_CASA
@@ -67,7 +67,7 @@ condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bED
 
 ## Flagging on the waterfall spectrum
 
-These steps are part of an alternative aproach for flagging.
+These steps are part of an additional aproach for flagging.
 
 ```
 git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
@@ -119,7 +119,7 @@ condor_submit 07_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DA
 ```
 
 
-## Additional falgging based on pre-calibrated (corrected) data
+## Additional flaging based on pre-calibrated (corrected) data
 
 ```
 chmod 755 08_PRE_CAL_ADVANCE_FG
