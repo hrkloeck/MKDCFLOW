@@ -14,6 +14,9 @@ mkdir condor_logs
 mkdir -p ${USER}/.casa/data 
 ```
 
+
+## Obtain information of the observatio 
+
 ```
  git clone https://github.com/hrkloeck/daskmsASTROKIT.git
 ```
@@ -26,20 +29,50 @@ chmod 755 01_OBS_INFORMATION
 condor_submit 01_OBS_INFORMATION.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD
 ```
 
+## Produce some diagnostic plots
+
+```
+chmod 755 02_OBS_DIAGNOSTIC_PLOTS
+```
+
+```
+condor_submit 02_OBS_DIAGNOSTIC_PLOTS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD
+```
+
 
 ## Flagging
 
+Do some basic flagging using CASA
 
-## Flagging
+```
+chmod 755 03_BASE_FLAGGING_CASA
+```
 
-Just does basic flagging
+
 ```
 condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD 
 ```
 
-Sequence of jobs to be done
+
+
+## Generate a averaged waterfall spectrum
+
+These steps are part of an alternative aproach for flagging.
 
 ```
-condor_submit 04_FLAGGING_HRK.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
+git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
 ```
 
+
+1. produce an averaged waterfall spectrum
+
+```
+chmod 755 04_AVERAGE_WATERFALL_SPECTRA
+```
+
+
+```
+condor_submit 04_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
+```
+
+2. 
