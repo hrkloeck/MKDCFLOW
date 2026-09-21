@@ -65,7 +65,7 @@ condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bED
 
 
 
-## Generate a averaged waterfall spectrum
+## Flagging on the waterfall spectrum
 
 These steps are part of an alternative aproach for flagging.
 
@@ -74,7 +74,8 @@ git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
 ```
 
 
-1. produce an averaged waterfall spectrum
+1. Generate an averaged waterfall spectrum and store it in a pickle
+   file
 
 ```
 chmod 755 04_AVERAGE_WATERFALL_SPECTRA
@@ -85,7 +86,7 @@ chmod 755 04_AVERAGE_WATERFALL_SPECTRA
 condor_submit 04_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
 ```
 
-2.  generate an averaged mask
+2.  Generate flags on the waterfall spectrum 
 
 ```
 chmod 755 05_GENERATE_WATERFALL_FLAGS
@@ -106,7 +107,7 @@ condor_submit 06_APPLY_FLAGS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/
 ```
 
 
-4. test if FG's has been applied (optional)
+4. Plot waterfall spectrum to check if FG's has been applied (optional)
 
 ```
 chmod 755 07_AVERAGE_WATERFALL_SPECTRA
@@ -115,6 +116,18 @@ chmod 755 07_AVERAGE_WATERFALL_SPECTRA
 
 ```
 condor_submit 07_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
+```
+
+
+## Additional falgging based on pre-calibrated (corrected) data
+
+```
+chmod 755 08_PRE_CAL_ADVANCE_FG
+```
+
+
+```
+condor_submit 08_PRE_CAL_ADVANCE_FG.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD 
 ```
 
 
