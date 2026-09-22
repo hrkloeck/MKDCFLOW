@@ -7,6 +7,10 @@ bash
 ```
 
 ```
+ git clone https://github.com/hrkloeck/MKDCFLOW.git
+```
+
+```
 mkdir condor_logs
 ```
 
@@ -105,19 +109,19 @@ chmod 755 06_APPLY_FLAGS
 ```
 
 ```
-condor_submit 06_APPLY_FLAGS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FG_FILE=PLT_J0408-6545_FG_MASK_PREFG_FID_0_J0408-6545_PREFG_DATA_FID_0__pickle.py_pickle.py
+condor_submit 06_APPLY_FLAGS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FG_FILE=PRE_FG_FID_0_J0521+1638_PRE_FG_FID_0__pickle.py
 ```
 
 
 4. Plot waterfall spectrum to check if FG's has been applied (optional)
 
 ```
-chmod 755 07_AVERAGE_WATERFALL_SPECTRA
+chmod 755 07_PLT_AVERAGE_WATERFALL_SPECTRA
 ```
 
 
 ```
-condor_submit 07_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
+condor_submit 07_PLT_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
 ```
 
 
