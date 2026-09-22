@@ -76,7 +76,7 @@ git clone https://github.com/hrkloeck/DASKMSWERKZEUGKASTEN.git
 ```
 
 
-1. Generate an averaged waterfall spectrum and store it in a pickle
+1. Generate an baseline averaged waterfall spectrum and store it in a pickle
    file
 
 ```
@@ -121,7 +121,7 @@ condor_submit 07_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DA
 ```
 
 
-### Additional flaging based on pre-calibrated (corrected) data
+### Flagging based on pre-calibrated (corrected) data
 
 ```
 chmod 755 08_PRE_CAL_ADVANCE_FG
@@ -132,4 +132,6 @@ chmod 755 08_PRE_CAL_ADVANCE_FG
 condor_submit 08_PRE_CAL_ADVANCE_FG.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD 
 ```
 
+
+## Start of the 1GC Calibration Sequence
 
