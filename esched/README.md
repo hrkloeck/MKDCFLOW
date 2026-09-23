@@ -66,7 +66,7 @@ chmod 755 03_BASE_FLAGGING_CASA
 
 
 ```
-condor_submit 03_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD 
+condor_submit 03_BASE_FLAGGING_CASA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD 
 ```
 
 
@@ -92,7 +92,7 @@ chmod 755 04_AVERAGE_WATERFALL_SPECTRA
 condor_submit 04_AVERAGE_WATERFALL_SPECTRA.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FIELD_ID=0
 ```
 
-2.  Generate flags on the waterfall spectrum 
+2.  Generate channel flags on the waterfall spectrum 
 
 ```
 chmod 755 05_GENERATE_WATERFALL_FLAGS
@@ -109,7 +109,7 @@ chmod 755 06_APPLY_FLAGS
 ```
 
 ```
-condor_submit 06_APPLY_FLAGS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FG_FILE=PRE_FG_FID_0_J0521+1638_PRE_FG_FID_0__pickle.py
+condor_submit 06_APPLY_FLAGS.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD FG_FILE=FG_MASK_PRE_FG_FID_0_J0521+1638_PRE_FG_FID_0__pickle.py
 ```
 
 
@@ -139,3 +139,16 @@ condor_submit 08_PRE_CAL_ADVANCE_FG.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH
 
 ## Start of the 1GC Calibration Sequence
 
+### Convert the broad band MS file into spectral windows (SPWD) 
+
+Will reshape the spectral data into 16 SWPD.
+
+```
+chmod 755 09_MAKE_MULTIPLE_SPWD_FILE
+```
+
+
+```
+condor_submit 09_MAKE_MULTIPLE_SPWD_FILE.sub
+DATA_FILE=1678454471_sdp_l0.ms DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=${SPWD} SPWD=16 
+```

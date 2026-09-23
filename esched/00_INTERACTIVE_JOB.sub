@@ -1,5 +1,5 @@
 universe        = vanilla
-executable      = 00_INTERACTVE_JOB
+executable      = 00_INTERACTIVE_JOB
 log             = condor_logs/run_example_$(Cluster)_$(Process).log
 output          = condor_logs/run_example_$(Cluster)_$(Process).out
 error           = condor_logs/run_example_$(Cluster)_$(Process).err

@@ -16,7 +16,10 @@ sing_wdir   = sys.argv[3]
 spectral_wd = sys.argv[4]
 #
 ms_name   = sing_ddir + MSFILE
-ms_output = sing_wdir + MSFILE+'.hann.spwd'
+#
+# Note the data will be written into the data directory
+#
+ms_output = sing_ddir + MSFILE+'.hann.spwd'
 #
 #
 casatasks.mstransform(vis=ms_name, regridms=True, nspw=spectral_wd, hanning=True, keepflags=True, outputvis=ms_output, datacolumn='data')
