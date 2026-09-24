@@ -22,5 +22,5 @@ ms_name   = sing_ddir + MSFILE
 ms_output = sing_ddir + MSFILE+'.hann.spwd'
 #
 #
-casatasks.mstransform(vis=ms_name, regridms=True, nspw=spectral_wd, hanning=True, keepflags=True, outputvis=ms_output, datacolumn='data')
+casatasks.mstransform(vis=ms_name, regridms=True, nspw=int(spectral_wd), hanning=True, keepflags=True, outputvis=ms_output, datacolumn='data')
 
