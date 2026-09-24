@@ -153,6 +153,13 @@ condor_submit 09_MAKE_MULTIPLE_SPWD_FILE.sub DATA_FILE=1678454471_sdp_l0.ms DATA
 ```
 
 
+### Check that the dataset has various SPWD 
+
+```
+condor_submit 01_OBS_INFORMATION.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD
+```
+
+
 ### Full 1GC Calibration 
 
 ```
