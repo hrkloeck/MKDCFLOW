@@ -137,7 +137,7 @@ condor_submit 08_PRE_CAL_ADVANCE_FG.sub DATA_FILE=1678454471_sdp_l0.ms DATA_PATH
 ```
 
 
-## Start of the 1GC Calibration Sequence
+## Do  1GC Calibration Sequence
 
 ### Convert the broad band MS file into spectral windows (SPWD) 
 
@@ -185,9 +185,40 @@ condor_submit 12_SPLIT_SOURCE.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd DATA_
 ```
 
 
+### Flagging on the waterfall spectrum on specific sources
+
+```
+chmod 755 13_MAKE_FULL_WF_FLAG_SEQUENCE
+```
+
+
+### Do Diagnostic plots
+
+```
+chmod 755 02_OBS_DIAGNOSTIC_PLOTS
+```
+
+```
+condor_submit 02_OBS_DIAGNOSTIC_PLOTS.sub DATA_FILE= DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=$PWD
+```
+
 ### Make a dirty image
 
 ```
-chmod 755 13_MAKE_DIRTY_IMAGE
+git clone https://github.com/JonahDW/Image-processing.git
 ```
+
+```
+git clone https://github.com/hrkloeck/2GC.git
+```
+
+
+```
+chmod 755 14_MAKE_DIRTY_IMAGE
+```
+
+
+## Do  2GC Calibration Sequence
+
+
 
