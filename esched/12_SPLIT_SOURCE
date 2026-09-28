@@ -22,11 +22,11 @@ CONT_PATH="/bEDD/MPLUS-CONTAINER/"
 
 # json file name
 #
-JSON_FILE = $4
+JSON_FILE=$4
 
 # field_id 
 #
-FIELD_ID = $5
+FIELD_ID=$5
 
 
 # Define singularity input 
