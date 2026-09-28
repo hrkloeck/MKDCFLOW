@@ -183,3 +183,11 @@ chmod 755 12_SPLIT_SOURCE
 ```
 condor_submit 12_SPLIT_SOURCE.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=${PWD} JSON_FILE=1678454471_sdp_l0.ms.hann.spwd.json FIELD_ID=0
 ```
+
+
+### Make a dirty image
+
+```
+chmod 755 13_MAKE_DIRTY_IMAGE
+```
+
