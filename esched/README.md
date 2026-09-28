@@ -217,8 +217,15 @@ git clone https://github.com/hrkloeck/2GC.git
 chmod 755 14_MAKE_DIRTY_IMAGE
 ```
 
-
+```
+condor_submit 14_MAKE_DIRTY_IMAGE.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd_J0521+1638 DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=${PWD}
+```
 ## Do  2GC Calibration Sequence
+
+```
+chmod 755 15_2GC_CALIBRATION
+```
+
 
 
 

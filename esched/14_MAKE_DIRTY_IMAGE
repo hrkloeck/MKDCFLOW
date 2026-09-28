@@ -38,4 +38,4 @@ WORKDIR="/work/"
 
 # Execute shadems inside singularity
 #
-singularity exec --bind ${WORK_PATH}:/homes --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" python3 ${WORKDIR}11_DO_FULL_CALIBRATION.py ${DATA_FILE} ${DATADIR} ${WORKDIR}
+singularity exec --bind ${WORK_PATH}:/homes --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" python3 ${WORKDIR}/2GC/IMAGING_and_2GC.py --MS_FILE=${DATA_FILE} --DATA_DIR=${DATADIR} --WORK_DIR=${WORKDIR} --IMAG_PARA_IMSIZE=512 --IMAG_PARA_ROBUST=0.3 --IMAG_PARA_NITER=1
