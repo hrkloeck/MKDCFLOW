@@ -20,12 +20,12 @@ jsonfilename = sing_wdir + jsonfile
 
 # ====================================
 #
-if jsonfilename.count('json') > 0:
+if jsonfile.count('json') > 0:
         with open(jsonfilename) as f:
                 d = json.load(f)
                 source_name = d['SOURCES'][int(field_id)]
 else:
-    source_name = jsonfilename
+    source_name = jsonfile
 #
 print('\n - CASA split: ',source_name)
 #
