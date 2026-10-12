@@ -28,6 +28,10 @@ JSON_FILE=$4
 #
 FIELD_ID=$5
 
+# spwdd
+#
+SPWDS=$6
+
 
 # Define singularity input 
 #
@@ -38,4 +42,4 @@ WORKDIR="/work/"
 
 # Execute shadems inside singularity
 #
-singularity exec --bind ${WORK_PATH}:/homes --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" python3 ${WORKDIR}12_SPLIT_SOURCE.py ${DATA_FILE} ${DATADIR} ${WORKDIR} ${JSON_FILE} ${FIELD_ID}
+singularity exec --bind ${WORK_PATH}:/homes --bind ${WORK_PATH}:${WORKDIR} --bind ${DATA_PATH}:${DATADIR} "${CONTAINER}" python3 ${WORKDIR}12_SPLIT_SOURCE.py ${DATA_FILE} ${DATADIR} ${WORKDIR} ${JSON_FILE} ${FIELD_ID} ${SPWDS}
