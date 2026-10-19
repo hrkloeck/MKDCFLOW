@@ -184,6 +184,13 @@ chmod 755 12_SPLIT_SOURCE
 condor_submit 12_SPLIT_SOURCE.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=${PWD} JSON_FILE=1678454471_sdp_l0.ms.hann.spwd.json FIELD_ID=0 SPWDS=0
 ```
 
+As a note the splitted MS-file might need writeable access for future
+processing (chmod 777 FILENAME). 
+
+If you want you can specify the sepctral windows with SPWDS='1,2,3'
+and SPWDS=0 will copy all availible spetrcal windows data.
+
+
 
 ### Flagging on the waterfall spectrum on specific sources
 
@@ -224,11 +231,11 @@ condor_submit 14_MAKE_DIRTY_IMAGE.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd_J
 ## Do  2GC Calibration Sequence
 
 ```
-chmod 755 15_2GC_CALIBRATION
+chmod 755 15_2GC_SELF_CAL
 ```
 
 ```
-condor_submit 15_2GC_CALIBRATION.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd_J0521+1638 DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=${PWD}
+condor_submit 15_2GC_SELF_CAL.sub DATA_FILE=1678454471_sdp_l0.ms.hann.spwd_J0521+1638 DATA_PATH=/bEDD/MPLUS-WORKONDATA WORK_PATH=${PWD}
 ```
 
 
