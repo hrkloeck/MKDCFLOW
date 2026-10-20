@@ -211,6 +211,11 @@ condor_submit 02_OBS_DIAGNOSTIC_PLOTS.sub DATA_FILE= DATA_PATH=/bEDD/MPLUS-WORKO
 
 ### Make a dirty image
 
+The memory assignment to the job on Edgar is critical. In case there
+are some alloc / memory related issues some of the setting neet to be
+changed in the json file. [Please have a look into the manual from
+wsclean about the various parameter] {https://wsclean.readthedocs.io/en/latest/parallelization.html}
+
 ```
 git clone https://github.com/JonahDW/Image-processing.git
 ```
