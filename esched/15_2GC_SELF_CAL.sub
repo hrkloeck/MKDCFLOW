@@ -5,8 +5,8 @@ log             = condor_logs/run_example_$(Cluster)_$(Process).log
 output          = condor_logs/run_example_$(Cluster)_$(Process).out
 error           = condor_logs/run_example_$(Cluster)_$(Process).err
 request_cpus    = 16
-request_memory  = 128GB
-request_disk    = 150GB
+request_memory  = 150GB
+request_disk    = 250GB
 getenv          = True
 
 accounting_group = g_mplus
